@@ -1,9 +1,12 @@
+<app-header
+    (fetureSelected)="onNavigate($event)"
+></app-header>
+
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <h3>I am the root compoment - AppComponent</h3>
-            <hr>
-            <div ></div>
+        <div class="col-md-12">
+            <app-recipe-book *ngIf="loadedFeature == 'recipe'"></app-recipe-book>
+            <app-shopping-list *ngIf="loadedFeature != 'recipe'"></app-shopping-list>
         </div>
     </div>
 </div>
